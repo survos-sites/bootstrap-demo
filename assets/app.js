@@ -1,3 +1,5 @@
+import 'bootstrap'; // bootstrap 5
+import './bootstrap.js'; // stimulus
 /*
  * Welcome to your app's main JavaScript file!
  *

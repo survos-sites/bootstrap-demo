@@ -31,4 +31,7 @@ return [
         'version' => '5.3.2',
         'type' => 'css',
     ],
+    '@symfony/stimulus-bundle' => [
+        'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
+    ],
 ];

@@ -10,8 +10,8 @@
 
 <div class="example-wrapper">
 
-    <twig:alert type="danger" message="hello!">Message</twig:alert>
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <twig:alert type="danger" dismissible="true" message="hello!">Message</twig:alert>
+    <h1 {{ stimulus_controller('hello') }}>Hello {{ controller_name }}! ✅</h1>
 
     This friendly message is coming from:
     <ul>
