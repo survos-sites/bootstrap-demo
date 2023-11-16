@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+    <!-- Accordion -->
+    <h5 class="mt-4">Accordion</h5>
+    <div class="row">
+        <div class="col-md mb-4 mb-md-0">
+            <small class="text-light fw-semibold">Basic Accordion</small>
+            <div class="accordion mt-3" id="accordionExample">
+                {% for i in 1..5 %}
+                    {% set active = i==1 %}
+                    <div class="card accordion-item {{ active ? 'active' }}">
+                        <twig:accordion :open="active" :header="company_jobTitle()"
+                                        accordion_body="{{ lorem_sentences(3, true) }}">
+
+
+                        </twig:accordion>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock body %}

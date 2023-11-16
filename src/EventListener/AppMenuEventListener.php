@@ -8,9 +8,9 @@ use Survos\BootstrapBundle\Traits\KnpMenuHelperTrait;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
-#[AsEventListener(event: KnpMenuEvent::NAVBAR_MENU_EVENT, method: 'navbarMenu')]
-#[AsEventListener(event: KnpMenuEvent::PAGE_MENU_EVENT, method: 'pageMenu')]
-#[AsEventListener(event: KnpMenuEvent::FOOTER_MENU_EVENT, method: 'footerMenu')]
+#[AsEventListener(event: KnpMenuEvent::NAVBAR_MENU, method: 'navbarMenu')]
+#[AsEventListener(event: KnpMenuEvent::PAGE_MENU, method: 'pageMenu')]
+#[AsEventListener(event: KnpMenuEvent::FOOTER_MENU, method: 'footerMenu')]
 final class AppMenuEventListener implements KnpMenuHelperInterface
 {
     use KnpMenuHelperTrait;
@@ -24,6 +24,10 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
     {
         $menu = $event->getMenu();
         $options = $event->getOptions();
+
+        foreach (['ui-alerts','cards-basic','ui-badges','ui-accordion'] as $pageCode) {
+            $this->add($menu, 'app_page', ['code' => $pageCode], label: $pageCode);
+        }
 
 //        $this->add($menu, 'app_homepage');
         // for nested menus, don't add a route, just a label, then use it for the argument to addMenuItem

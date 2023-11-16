@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+    <div class="example">
+
+
+        <twig:alert message="hello!" />
+
+        <h3>Twig Example</h3>
+        <pre><code class="langauge-twig">{{ '
+        {% set bsClass = "alert" %}
+        {{ component("alert", {
+             type: bsClass,
+             dismissible: false,
+             message: "Look, a %s alert — check it out!"|format(bsClass)' }}
+        '}}
+            </code>
+        </pre>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Basic Alerts -->
+        <div class="col-md mb-4 mb-md-0">
+            <div class="card">
+                <h5 class="card-header">Basic Alerts</h5>
+                <div class="card-body">
+                    {% for bsClass in bootstrap_theme_colors() %}
+                        {% set message ="Look, a %s alert — check it out!"|format(bsClass)   %}
+                        <twig:alert :message="message" :type="bsClass" />
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!--/ Basic Alerts -->
+        <!-- Dismissible Alerts -->
+        <div class="col-md">
+            <div class="card">
+                <h5 class="card-header">Dismissible Alerts</h5>
+                <div class="card-body">
+                    {% for bsClass in bootstrap_theme_colors() %}
+                        {% set message ="Dismissible %s alert — check it out!"|format(bsClass)   %}
+                        <twig:alert :message="message" :type="bsClass" dismissible="true" />
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!--/ Dismissible Alerts -->
+    </div>
+
+
+{% endblock body %}

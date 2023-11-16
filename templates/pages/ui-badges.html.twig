@@ -1,0 +1,161 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+    <!-- Content -->
+
+    <div class="row">
+        <!-- Basic Badges -->
+        <div class="col-lg">
+            <div class="card mb-4">
+                <h5 class="card-header">Basic Badges</h5>
+                <div class="card-body">
+                    <div class="text-light small fw-semibold">Default</div>
+                    <div class="demo-inline-spacing">
+                        {% for color in bootstrap_theme_colors() %}
+                            {{ component('badge', {color: color, message: color}) }}
+                        {% endfor %}
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="card-body">
+                    <div class="text-light small fw-semibold">Pills</div>
+
+                    <div class="demo-inline-spacing">
+                        {% for color in bootstrap_theme_colors() %}
+                            {{ component('badge', {color: color, message: "%s %s"|format(color, 'rounded'), style: 'rounded-pill'}) }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Label Badges -->
+        <div class="col-lg">
+            <div class="card mb-4">
+                <h5 class="card-header">Label Badges</h5>
+                <div class="card-body">
+                    <div class="text-light small fw-semibold">Label Default</div>
+                    <div class="demo-inline-spacing">
+                        {% for color in bootstrap_theme_colors() %}
+                            {{ component('badge', {label: true, color: color, message: "%s %s"|format(color, 'label')}) }}
+                        {% endfor %}
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="card-body">
+                    <div class="text-light small fw-semibold">Label Pills</div>
+                    <div class="demo-inline-spacing">
+                        {% for color in bootstrap_theme_colors() %}
+                            {{ component('badge', {label: true, color: color, message: "%s %s"|format(color, 'label'), style: 'rounded-pill'}) }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Button with Badges -->
+        <div class="col-lg">
+
+
+            <div class="card mb-4">
+                <h5 class="card-header">Button with Badges</h5>
+                <div class="card-body">
+                    <div class="row gy-3">
+                        <div class="col-sm-4">
+                            <small class="text-light fw-semibold">Default</small>
+                            <div class="demo-inline-spacing">
+
+
+                                <button type="button" class="btn btn-primary">
+                                    Text <textarea>component('badge', {color: 'white', text: 'primary', message: 5})</textarea>
+                                    {{ component('badge', {color: 'white', text: 'primary', message: 5}) }}
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                    Text
+                                    {{ component('badge', {color: 'secondary', style: 'rounded-pill', message: 6}) }}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <small class="text-light fw-semibold">Label</small>
+                            <div class="demo-inline-spacing">
+                                <button type="button" class="btn btn-outline-primary">
+                                    Text
+                                    {{ component('badge', {color: 'white', text: 'primary', message: 5}) }}
+                                    <span class="badge bg-white text-primary">4</span>
+                                </button>
+                                <button type="button" class="btn btn-outline-primary">
+                                    Text
+                                    {{ component('badge', {color: 'secondary', style: 'rounded-pill', message: 6}) }}
+                                    <span class="badge bg-secondary rounded-pill">4</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <small class="text-light fw-semibold">Outline</small>
+                            <div class="demo-inline-spacing">
+                                <button type="button" class="btn btn-outline-primary">
+                                    Text
+                                    {{ component('badge', { message: 6}) }}
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary">
+                                    Text
+                                    {{ component('badge', { style: 'rounded-pill', message: 6}) }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Badge Circle -->
+        <div class="col-12">
+            <div class="card mb-4">
+                <h5 class="card-header">Badge Circle &amp; Square Style</h5>
+                <div class="card-body">
+                    <div class="row gy-3">
+                        <div class="col-xl-6">
+                            <h6>Basic</h6>
+                            <div class="text-light small fw-semibold mb-2">Default</div>
+                            <div class="demo-inline-spacing">
+                                <p>
+                                    {% for color in bootstrap_theme_colors() %}
+                                        {{ component('badge', { color: color, style: 'badge-center rounded-pill', message: loop.index}) }}
+                                    {% endfor %}
+                                </p>
+                                <p>
+                                    {% for color in bootstrap_theme_colors() %}
+                                        {{ component('badge', { color: color, style: 'badge-center', message: loop.index}) }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <h6>Label</h6>
+                            <div class="text-light small fw-semibold mb-2">Default</div>
+                            <div class="demo-inline-spacing">
+                                <p>
+                                    {% for color in bootstrap_theme_colors() %}
+                                        {{ component('badge', { label: true, color: color, style: 'badge-center rounded-pill', message: loop.index}) }}
+                                    {% endfor %}
+                                </p>
+
+                                <p>
+                                    {% for color in bootstrap_theme_colors() %}
+                                        {{ component('badge', { label: true, color: color, style: 'badge-center', message: loop.index}) }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

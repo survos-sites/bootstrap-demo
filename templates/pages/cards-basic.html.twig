@@ -1,0 +1,27 @@
+{% extends "base.html.twig"  %}
+{% block body  %}
+
+              {% set src="/bundles/survosbootstrap/sneat/img/elements/2.jpg" %}
+              <!-- Examples -->
+              <div class="row mb-5">
+                <div class="col-md-6 col-lg-4 mb-3">
+                  {% component card with {
+                      title: 'Card Title',
+                        image: src
+                  }%}
+                    {% block text %}
+                      <div class="text-light small fw-semibold">Default</div>
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                    {% endblock %}
+
+                    {% block links %}
+                      <div class="demo-inline-spacing">
+                        <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                      </div>
+                    {% endblock %}
+                  {% endcomponent %}
+                </div>
+              </div>
+
+
+{% endblock body  %}

@@ -34,4 +34,15 @@ return [
     '@symfony/stimulus-bundle' => [
         'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
     ],
+    'tabler' => [
+        'version' => '1.0.0-alpha.8',
+    ],
+    'tabler/dist/css/tabler.min.css' => [
+        'version' => '1.0.0-alpha.8',
+        'type' => 'css',
+    ],
+    'bootswatch/dist/materia/bootstrap.min.css' => [
+        'version' => '5.3.2',
+        'type' => 'css',
+    ],
 ];

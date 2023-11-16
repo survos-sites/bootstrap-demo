@@ -13,6 +13,16 @@
     <twig:alert type="danger" dismissible="true" message="hello!">Message</twig:alert>
     <h1 {{ stimulus_controller('hello') }}>Hello {{ controller_name }}! ✅</h1>
 
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        Welcome, {{ app.user.email }}! (roles: {{ app.user.roles|join(',') }})
+        <a href="{{ path('app_logout') }}">Logout</a>
+    {% else %}
+        Welcome, visitor!
+        <a href="{{ path('app_login') }}">Log In</a>
+        {{ include('@SurvosAuth/_social_media_login_buttons.html.twig') }}
+
+    {% endif %}
+
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/home/tac/g/tacman/bootstrap-demo/src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
