@@ -1,0 +1,22 @@
+survos_bootstrap:
+  routes:
+    login: app_login
+    logout: app_logout
+    home: app_homepage
+    register: app_register
+    offcanvas: app_settings
+  options:
+    # consider https://startbootstrap.com/previews/simple-sidebar as another theme
+    theme: bootswatch
+    layout_direction: vertical
+    allow_login: true
+  app:
+      code: bootstrap-demo
+      abbr: <b>boots</b>Demo
+      social:
+        github: https://github.com/tacman/bootstrap-demo
+
+  menu_options:
+    project: null
+    frontPage: false
+    showAppMenu: true

@@ -10,8 +10,10 @@
 
 <div class="example-wrapper">
 
-    <twig:alert type="danger" dismissible="true" message="hello!">Message</twig:alert>
-    <h1 {{ stimulus_controller('hello') }}>Hello {{ controller_name }}! ✅</h1>
+    <twig:alert type="info" dismissible="true" message="hello!">This is an alert component</twig:alert>
+    <code>
+        &lt;twig:alert type="info" dismissible="true" message="hello!"&gt;This is an alert component&lt;/twig:alert&gt;
+    </code>
 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         Welcome, {{ app.user.email }}! (roles: {{ app.user.roles|join(',') }})
@@ -23,10 +25,5 @@
 
     {% endif %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/tac/g/tacman/bootstrap-demo/src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/tac/g/tacman/bootstrap-demo/templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
-    </ul>
 </div>
 {% endblock %}
