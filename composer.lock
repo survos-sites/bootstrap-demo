@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7ea14c485bedafbfbf205a7a1514648",
+    "content-hash": "976c988d2f1fa6191954a9b3b04a14aa",
     "packages": [
         {
             "name": "composer/semver",
@@ -1819,6 +1819,79 @@
                 }
             ],
             "time": "2024-07-18T11:15:46+00:00"
+        },
+        {
+            "name": "kevinpapst/tabler-bundle",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kevinpapst/TablerBundle.git",
+                "reference": "a146645041c2ddbda2a1d10234a4d523820fd741"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kevinpapst/TablerBundle/zipball/a146645041c2ddbda2a1d10234a4d523820fd741",
+                "reference": "a146645041c2ddbda2a1d10234a4d523820fd741",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "symfony/asset": "^6.0 || ^7.0",
+                "symfony/config": "^6.0 || ^7.0",
+                "symfony/dependency-injection": "^6.0 || ^7.0",
+                "symfony/event-dispatcher": "^6.0 || ^7.0",
+                "symfony/http-foundation": "^6.0 || ^7.0",
+                "symfony/http-kernel": "^6.0 || ^7.0",
+                "symfony/options-resolver": "^6.0 || ^7.0",
+                "symfony/security-core": "^6.0 || ^7.0",
+                "symfony/translation": "^6.0 || ^7.0",
+                "symfony/twig-bridge": "^6.0 || ^7.0",
+                "twig/twig": "^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "knplabs/knp-menu-bundle": "^3.0",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-symfony": "^1.0",
+                "phpunit/phpunit": "^9.0",
+                "symfony/framework-bundle": "^6.0 || ^7.0"
+            },
+            "suggest": {
+                "knplabs/knp-menu-bundle": "Allows easy menu integration"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "KevinPapst\\TablerBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Papst",
+                    "homepage": "https://www.kevinpapst.de"
+                }
+            ],
+            "description": "Admin/Backend theme bundle for Symfony based on Tabler.io",
+            "support": {
+                "issues": "https://github.com/kevinpapst/TablerBundle/issues",
+                "source": "https://github.com/kevinpapst/TablerBundle/tree/1.4.2"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/kevinpapst",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/kevinpapst",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-07-05T20:05:16+00:00"
         },
         {
             "name": "knplabs/knp-menu",

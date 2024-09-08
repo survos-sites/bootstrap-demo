@@ -21,4 +21,5 @@ return [
     Survos\FakerBundle\SurvosFakerBundle::class => ['all' => true],
     Survos\DeploymentBundle\SurvosDeploymentBundle::class => ['all' => true],
     Symfony\UX\Icons\UXIconsBundle::class => ['all' => true],
+//    KevinPapst\TablerBundle\TablerBundle::class => ['all' => true],
 ];

@@ -10,6 +10,7 @@ survos_bootstrap:
     theme: tabler
     layout_direction: vertical
     allow_login: true
+    show_locale_dropdown: true
   app:
       code: bootstrap-demo
       abbr: <b>boots</b>Demo

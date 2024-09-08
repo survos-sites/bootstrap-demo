@@ -1,3 +1,7 @@
 body {
     background-color: skyblue;
 }
+
+.nav-link {
+    margin-left: 3px;
+}
