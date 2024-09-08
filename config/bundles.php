@@ -20,4 +20,5 @@ return [
     Survos\AuthBundle\SurvosAuthBundle::class => ['all' => true],
     Survos\FakerBundle\SurvosFakerBundle::class => ['all' => true],
     Survos\DeploymentBundle\SurvosDeploymentBundle::class => ['all' => true],
+    Symfony\UX\Icons\UXIconsBundle::class => ['all' => true],
 ];

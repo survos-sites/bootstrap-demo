@@ -7,7 +7,7 @@ survos_bootstrap:
     offcanvas: app_settings
   options:
     # consider https://startbootstrap.com/previews/simple-sidebar as another theme
-    theme: bootswatch
+    theme: tabler
     layout_direction: vertical
     allow_login: true
   app:
