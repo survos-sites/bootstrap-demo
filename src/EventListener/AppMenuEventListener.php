@@ -3,6 +3,7 @@
 namespace App\EventListener;
 
 use Survos\BootstrapBundle\Event\KnpMenuEvent;
+use Survos\BootstrapBundle\Service\MenuService;
 use Survos\BootstrapBundle\Traits\KnpMenuHelperInterface;
 use Survos\BootstrapBundle\Traits\KnpMenuHelperTrait;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
@@ -15,7 +16,9 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
     use KnpMenuHelperTrait;
 
     // this should be optional, not sure we really need it here.
-    public function __construct(private ?AuthorizationCheckerInterface $security = null)
+    public function __construct(
+        protected MenuService                                $menuService, // helper for auth menus, etc.
+        private ?AuthorizationCheckerInterface $security = null)
     {
     }
 
@@ -39,7 +42,10 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
         $options = $event->getOptions();
 
         foreach (['ui-alerts','cards-basic','ui-badges','ui-accordion'] as $pageCode) {
-            $this->add($menu, 'app_page', ['code' => $pageCode], label: $pageCode);
+            $this->add($menu, 'app_page', [
+                'code' => $pageCode],
+                label: $pageCode,
+                icon: 'tabler:badge');
         }
 
 //        $this->add($menu, 'app_homepage');
@@ -64,6 +70,14 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
     public function pageMenu(KnpMenuEvent $event): void
     {
     }
+
+    #[AsEventListener(event: KnpMenuEvent::AUTH_MENU)]
+    public function appAuthMenu(KnpMenuEvent $event): void
+    {
+        $menu = $event->getMenu();
+        $this->menuService->addAuthMenu($menu);
+    }
+
 
 }
 
