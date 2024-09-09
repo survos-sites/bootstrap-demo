@@ -4,8 +4,9 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
+#[Route('/{_locale}')]
 class AppController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]

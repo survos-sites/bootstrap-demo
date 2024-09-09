@@ -41,6 +41,8 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
         $menu = $event->getMenu();
         $options = $event->getOptions();
 
+        $this->add($menu, 'app_homepage', icon: 'tabler:home');
+
         foreach (['ui-alerts','cards-basic','ui-badges','ui-accordion'] as $pageCode) {
             $this->add($menu, 'app_page', [
                 'code' => $pageCode],
