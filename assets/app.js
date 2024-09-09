@@ -1,15 +1,16 @@
-import 'bootstrap'; // bootstrap 5
-import './bootstrap.js'; // stimulus
-/*
- * Welcome to your app's main JavaScript file!
- *
- * This file will be included onto the page via the importmap() Twig function,
- * which should already be in your base.html.twig.
- */
+
+// js
+import './stimulus.js';
+import '@tabler/core'; // the js?
+// import 'bootstrap'; // bootstrap js is included in @tabler/core, don't load twice!
+
+// css
+import 'bootstrap/dist/css/bootstrap.min.css'; // get bootstrap js
+import '@tabler/core/dist/css/tabler.min.css'
+
+
+// application css
 import './styles/app.css'
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉')
+console.log('bootstrap, tabler and app js/css loaded')
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
-import '@tabler/core'; // the js?
-import '@tabler/core/dist/css/tabler.min.css'

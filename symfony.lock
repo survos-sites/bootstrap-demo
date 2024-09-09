@@ -235,7 +235,7 @@
             "ref": "05c45071c7ecacc1e48f94bc43c1f8d4405fb2b2"
         },
         "files": [
-            "assets/bootstrap.js",
+            "assets/stimulus.js",
             "assets/controllers.json",
             "assets/controllers/hello_controller.js"
         ]
