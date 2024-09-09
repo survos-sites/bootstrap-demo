@@ -10,8 +10,9 @@
                 {% for i in 1..5 %}
                     {% set active = i==1 %}
                     <div class="card accordion-item {{ active ? 'active' }}">
-                        <twig:accordion :open="active" :header="company_jobTitle()"
-                                        accordion_body="{{ lorem_sentences(3, true) }}">
+                        <twig:accordion :open="active"
+                                        :header="company_jobTitle()"
+                                        :accordion_body="lorem_sentences(3, true)">
 
 
                         </twig:accordion>
