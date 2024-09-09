@@ -8,7 +8,6 @@ use Survos\BootstrapBundle\Traits\KnpMenuHelperTrait;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
-#[AsEventListener(event: KnpMenuEvent::NAVBAR_MENU, method: 'navbarMenu')]
 #[AsEventListener(event: KnpMenuEvent::PAGE_MENU, method: 'pageMenu')]
 #[AsEventListener(event: KnpMenuEvent::FOOTER_MENU, method: 'footerMenu')]
 final class AppMenuEventListener implements KnpMenuHelperInterface
@@ -20,6 +19,20 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
     {
     }
 
+    #[AsEventListener(event: KnpMenuEvent::NAVBAR_MENU2)]
+    public function topIconMenu(KnpMenuEvent $event): void
+    {
+        $menu = $event->getMenu();
+        foreach ([
+            'Source Code' => 'hugeicons:github',
+            'Sponsor' => 'mdi:heart-outline'
+                     ] as $label => $icon ) {
+            $this->add($menu, label: $label, icon: $icon);
+        }
+
+    }
+
+    #[AsEventListener(event: KnpMenuEvent::NAVBAR_MENU)]
     public function navbarMenu(KnpMenuEvent $event): void
     {
         $menu = $event->getMenu();

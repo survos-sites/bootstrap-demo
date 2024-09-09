@@ -8,14 +8,14 @@ survos_bootstrap:
   options:
     # consider https://startbootstrap.com/previews/simple-sidebar as another theme
     theme: tabler
-    layout_direction: vertical
+    layout_direction: horizontal
     allow_login: true
     show_locale_dropdown: true
   app:
       code: bootstrap-demo
       abbr: <b>boots</b>Demo
       social:
-        github: https://github.com/tacman/bootstrap-demo
+        github: https://github.com/survos-sites/bootstrap-demo
 
   menu_options:
     project: null

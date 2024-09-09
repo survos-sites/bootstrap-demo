@@ -16,31 +16,31 @@ return [
         'path' => './assets/app.js',
         'entrypoint' => true,
     ],
+    '@symfony/stimulus-bundle' => [
+        'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
+    ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
     'bootstrap' => [
-        'version' => '5.3.2',
+        'version' => '5.3.3',
     ],
     '@popperjs/core' => [
         'version' => '2.11.8',
     ],
     'bootstrap/dist/css/bootstrap.min.css' => [
-        'version' => '5.3.2',
-        'type' => 'css',
-    ],
-    '@symfony/stimulus-bundle' => [
-        'path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js',
-    ],
-    'tabler' => [
-        'version' => '1.0.0-alpha.8',
-    ],
-    'tabler/dist/css/tabler.min.css' => [
-        'version' => '1.0.0-alpha.8',
+        'version' => '5.3.3',
         'type' => 'css',
     ],
     'bootswatch/dist/materia/bootstrap.min.css' => [
-        'version' => '5.3.2',
+        'version' => '5.3.3',
+        'type' => 'css',
+    ],
+    '@tabler/core' => [
+        'version' => '1.0.0-beta21',
+    ],
+    '@tabler/core/dist/css/tabler.min.css' => [
+        'version' => '1.0.0-beta21',
         'type' => 'css',
     ],
 ];
