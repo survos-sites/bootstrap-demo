@@ -43,21 +43,26 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
 
         $this->add($menu, 'app_homepage', icon: 'tabler:home');
 
-        foreach (['ui-alerts','cards-basic','ui-badges','ui-accordion'] as $pageCode) {
+        foreach (['ui-alerts'=>'tabler:alert-circle',
+//                     'cards-basic',
+                     'ui-badges'=>'tabler:badge',
+                     'ui-accordion' => 'vaadin:accordion-menu'] as $pageCode=>$icon) {
             $this->add($menu, 'app_page', [
                 'code' => $pageCode],
                 label: $pageCode,
-                icon: 'tabler:badge');
+                icon: $icon);
         }
 
 //        $this->add($menu, 'app_homepage');
         // for nested menus, don't add a route, just a label, then use it for the argument to addMenuItem
 
-        $nestedMenu = $this->addSubmenu($menu, 'Credits');
+        $nestedMenu = $this->addSubmenu($menu, 'Columns', icon: 'tabler:columns', extras: [
+            'columns' => 3
+        ]);
 
-        foreach (['bundles', 'javascript'] as $type) {
+        for ($x = 1; $x <= 12; $x++) {
             // $this->addMenuItem($nestedMenu, ['route' => 'survos_base_credits', 'rp' => ['type' => $type], 'label' => ucfirst($type)]);
-            $this->addMenuItem($nestedMenu, ['uri' => "#$type", 'label' => ucfirst($type)]);
+            $this->add($nestedMenu, uri: '#', label: "Item $x", badge: (($x % 5) == 0) ? '5!' : '') ;
         }
     }
 

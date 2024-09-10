@@ -14,20 +14,19 @@
                         {# as attributes #}
                         <twig:accordion :open="open"
                                         :header="company_jobTitle()"
-                                        :accordion_body="lorem_sentences(40, true)"
+                                        :body="lorem_sentences(40, true)"
                         >
                         </twig:accordion>
 
                         {# as blocks #}
-                        <twig:accordion :open="open"
-                        >
-                            <twig:block name="header">
-                                {{ company_jobTitle() }}
-                            </twig:block>
-                            <twig:block name="body">
-                                {{ lorem_sentences(40, true) }}
-                            </twig:block>
-                        </twig:accordion>
+{#                        <twig:accordion :open="open">#}
+{#                            <twig:block name="header">#}
+{#                                {{ company_jobTitle() }}#}
+{#                            </twig:block>#}
+{#                            <twig:block name="body">#}
+{#                                {{ lorem_sentences(40, true) }}#}
+{#                            </twig:block>#}
+{#                        </twig:accordion>#}
 
                     </div>
                 {% endfor %}
