@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
+use Symfony\Component\HttpKernel\Attribute\MapQueryString;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/{_locale}')]
@@ -23,6 +24,15 @@ class AppController extends AbstractController
     {
         return $this->render("pages/$code.html.twig", [
         ]);
+    }
+
+    #[Route('/flash/{flashType}', name: 'app_flash')]
+    public function flash(string $flashType,
+    #[MapQueryParameter] string $msg
+    ): Response
+    {
+        $this->addFlash($flashType, $msg);
+        return $this->redirectToRoute('app_homepage');
     }
 
     #[Route('/search/{table}', name: 'app_search')]

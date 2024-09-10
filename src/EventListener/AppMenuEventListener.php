@@ -55,13 +55,20 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
 //        $this->add($menu, 'app_homepage');
         // for nested menus, don't add a route, just a label, then use it for the argument to addMenuItem
 
-        $nestedMenu = $this->addSubmenu($menu, 'Columns', icon: 'tabler:columns', extras: [
+        $nestedMenu = $this->addSubmenu($menu, 'Flashes', icon: 'tabler:columns', extras: [
             'maxItemsPerColumn' => 8
         ]);
 
         for ($x = 1; $x <= 12; $x++) {
             // $this->addMenuItem($nestedMenu, ['route' => 'survos_base_credits', 'rp' => ['type' => $type], 'label' => ucfirst($type)]);
-            $this->add($nestedMenu, uri: '#', label: "Item $x", badge: (($x % 5) == 0) ? '5!' : '') ;
+            $flashType = ['success','warning','error'][$x % 3];
+            $rp = [
+                'flashType' => $flashType,
+                'msg' => "$flashType $x"
+            ];
+            $this->add($nestedMenu, route: 'app_flash', rp: $rp, label: "$flashType $x",
+
+                badge: (($x % 5) == 0) ? '5!' : '') ;
         }
     }
 
