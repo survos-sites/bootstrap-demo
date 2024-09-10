@@ -10,7 +10,6 @@ use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 #[AsEventListener(event: KnpMenuEvent::PAGE_MENU, method: 'pageMenu')]
-#[AsEventListener(event: KnpMenuEvent::FOOTER_MENU, method: 'footerMenu')]
 final class AppMenuEventListener implements KnpMenuHelperInterface
 {
     use KnpMenuHelperTrait;
@@ -66,12 +65,44 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
         }
     }
 
+    #[AsEventListener(event: KnpMenuEvent::FOOTER_MENU)]
     public function footerMenu(KnpMenuEvent $event): void
     {
         $menu = $event->getMenu();
         $options = $event->getOptions();
         $subMenu = $this->addSubmenu($menu, 'github');
         $this->add($subMenu, uri: 'https://github.com');
+    }
+
+    #[AsEventListener(event: KnpMenuEvent::SEARCH_MENU)]
+    #[AsEventListener(event: KnpMenuEvent::NAVBAR_MENU)]
+    public function searchMenu(KnpMenuEvent $event): void
+    {
+        $menu = $event->getMenu();
+        $options = $event->getOptions();
+        $subMenu = $this->addSubmenu($menu, 'multi-dropdown search!', icon: 'tabler:search');
+        foreach ([
+            [
+                'icon' => "tabler:calendar",
+                'route' => 'app_search',
+                'rp' => [
+                    'table' => 'components'
+                ],
+                'label' => "Search Components",
+            ],
+                     [
+                         'icon' => "tabler:calendar",
+                         'route' => 'app_search',
+                         'rp' => [
+                             'table' => 'events'
+                         ],
+                         'label' => "Search Events",
+                     ],
+
+                 ] as $m) {
+            $this->add($subMenu, $m['route'], $m['rp'], $m['label'], icon: $m['icon']);
+
+        }
     }
 
     public function pageMenu(KnpMenuEvent $event): void
