@@ -57,7 +57,7 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
         // for nested menus, don't add a route, just a label, then use it for the argument to addMenuItem
 
         $nestedMenu = $this->addSubmenu($menu, 'Columns', icon: 'tabler:columns', extras: [
-            'columns' => 3
+            'maxItemsPerColumn' => 8
         ]);
 
         for ($x = 1; $x <= 12; $x++) {
