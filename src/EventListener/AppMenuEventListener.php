@@ -89,21 +89,21 @@ final class AppMenuEventListener implements KnpMenuHelperInterface
         $options = $event->getOptions();
         $subMenu = $this->addSubmenu($menu, 'multi-dropdown search!', icon: 'tabler:search');
         foreach ([
-            [
-                'icon' => "tabler:calendar",
-                'route' => 'app_search',
-                'rp' => [
-                    'table' => 'components'
-                ],
-                'label' => "Search Components",
-            ],
                      [
-                         'icon' => "tabler:calendar",
+                         'icon' => "tabler:museum",
                          'route' => 'app_search',
                          'rp' => [
-                             'table' => 'events'
+                             'table' => 'owner'
                          ],
-                         'label' => "Search Events",
+                         'label' => "Museums",
+                     ],
+                     [
+                         'icon' => "tabler:database",
+                         'route' => 'app_search',
+                         'rp' => [
+                             'table' => 'pixies'
+                         ],
+                         'label' => "Search Pixies",
                      ],
 
                  ] as $m) {
