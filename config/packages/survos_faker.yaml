@@ -1,0 +1,4 @@
+survos_faker:
+    seed:                 123
+    function_prefix:      ''
+
