@@ -37,7 +37,7 @@ class AppController extends AbstractController
 
     #[Route('/search/{table}', name: 'app_search')]
     public function search(string $table,
-    #[MapQueryParameter] string $q=null
+    #[MapQueryParameter] ?string $q=null
     ): Response
     {
         return new Response("Searching table $table for $q");

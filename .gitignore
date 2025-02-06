@@ -16,3 +16,9 @@
 /public/assets/
 /assets/vendor
 ###< symfony/asset-mapper ###
+
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
+config.bat
+node_modules
